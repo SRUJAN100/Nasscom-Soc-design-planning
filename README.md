@@ -18,7 +18,6 @@ docker
 ![start 1](https://github.com/user-attachments/assets/159afd16-021a-4412-8ad5-20838fac99d1) 
 
 ```
-docker
 ./flow.tcl -interactive
 ```
 To get require package 

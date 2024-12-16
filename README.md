@@ -1,6 +1,6 @@
 # Nasscom-Soc-design-planning Workshop (December 11-December 24)
 
-Day - 1 (inception of open source EDA, openlane and SKY130PDK)
+- Day - 1 (inception of open source EDA, openlane and SKY130PDK)
 
 This repository houses materials, resources, and examples from the Digital VLSI System-on-Chip (SoC) Design and Implementation Workshop. The workshop is designed to familiarize participants with the principles of digital VLSI circuit design, as well as the key stages of SoC development, including architecture, simulation, and real-world implementation. Emphasis is placed on hands-on learning and industry-relevant techniques for creating high-performance SoCs.  
 
@@ -43,13 +43,15 @@ Flop\ Ratio = \frac{Number\ of\ D\ Flip\ Flops}{Total\ Number\ of\ Cells}
 ![ff count 2](https://github.com/user-attachments/assets/1f42b0c8-c09c-49c2-ab21-885e08ccead0)
 
 
-- By observing the stat report = The no.of D flip-flops are 1613  & The Total no.of cells in  the current folder is 14876, hence flop ratio becomes
+By observing the stat report = The no.of D flip-flops are 1613  & The Total no.of cells in  the current folder is 14876, hence flop ratio becomes
   
 ```math
 Flop\ Ratio = \frac{1613}{14876} = 0.1084
 ```
 To find the percentage 
- = 0.1084 or 10.84%
+ = 0.1084 x 100 = 10.84%
 
+#
+- Day - 2 (Good floorplan Vs Bad floorplan and introduction to library cells)
 
 

@@ -1,6 +1,6 @@
 # Nasscom-Soc-design-planning Workshop (December 11-December 24)
 
-- Day - 1 (inception of open source EDA, openlane and SKY130PDK)
+# Day - 1 (inception of open source EDA, openlane and SKY130PDK)
 
 This repository houses materials, resources, and examples from the Digital VLSI System-on-Chip (SoC) Design and Implementation Workshop. The workshop is designed to familiarize participants with the principles of digital VLSI circuit design, as well as the key stages of SoC development, including architecture, simulation, and real-world implementation. Emphasis is placed on hands-on learning and industry-relevant techniques for creating high-performance SoCs.  
 
@@ -52,7 +52,7 @@ To find the percentage
  = 0.1084 x 100 = 10.84%
 
 #
-- Day - 2 (Good floorplan Vs Bad floorplan and introduction to library cells)
+# Day - 2 (Good floorplan Vs Bad floorplan and introduction to library cells)
 
 - Utilization Factor 
 The effectiveness of space utilization within the chip's core is gauged by the Utilization Factor (U.F.). It is the proportion between the area of the core (the designated functional area on the chip) and the area occupied by the netlist (logical design components like gates, flip-flops, etc.). More efficient use of the given core space is indicated by a greater utilization factor. 
@@ -84,7 +84,7 @@ Layout view
 ![cell view](https://github.com/user-attachments/assets/eb5e1b60-6a65-496e-9fee-142014cfb404)
 
 #
-- Day - 3 (Design library cell using magic layout and ngspice characterization)
+# Day - 3 (Design library cell using magic layout and ngspice characterization)
 
 - cloning git repo to openlane
 ```
@@ -110,7 +110,8 @@ magic -T sky130A.tech sky130_inv.mag &
 ![circuit naming](https://github.com/user-attachments/assets/606a5df6-f074-4a75-9080-8f4332c14087)
 
 #
-- Day - 4 (pre-layout timing analysis and importance of good clock tree)
+# Day - 4 (pre-layout timing analysis and importance of good clock tree)
+
 - The Impact of Glitches
 
 Errors in functionality:
@@ -156,5 +157,71 @@ An "H" is formed at each level of the hierarchy by the H-tree structure, which h
 ![Screenshot 2024-12-24 222859](https://github.com/user-attachments/assets/9374448f-9e66-40b3-96c7-5cf91df5fcfc) 
 
 #
-- Day - 5 (final steps for RTL2GDS using tritonRoute and openSTA)
-- 
+# Day - 5 (final steps for RTL2GDS using tritonRoute and openSTA)
+
+- Definition: By figuring out the routes for signal interconnects across metal layers, routing joins every cell in a design based on a netlist.
+
+
+Important Routing Steps:
+Worldwide Routing:
+determines the approximate pathways for each net after dividing the chip into sections.
+The precise metal rails and vias for interconnects are specified in the detailed routing.
+Lee's Algorithm is the main algorithm.
+
+
+
+In routing, the shortest path between two locations in a grid is found using a breadth-first search technique.
+Steps: Expand the search in a wavefront pattern after starting at the source.
+Mark cells that are farther apart till you reach your target.
+To discover the shortest route, go back.
+TritonRoute is the routing tool.
+Developed to deal with contemporary VLSI designs, TritonRoute is an open-source tool for precise routing.
+
+
+
+Features: Manages intricate routing situations.
+carries out Design Rule Checks (DRCs) to guarantee manufacturing feasibility.
+
+Benefits of Routing
+
+
+guarantees that all cells have the right signal connections.
+reduces power usage and connectivity latency.
+In physical design, routing is an essential process that guarantees the design's functionality, efficiency, and manufacturing viability.
+
+![Screenshot 2024-12-24 232130](https://github.com/user-attachments/assets/f74f426d-d613-4474-bf18-5265d3fa6186)
+
+![Screenshot 2024-12-24 231811](https://github.com/user-attachments/assets/839f1ae2-ac6d-4833-969c-a95ed090b671) 
+
+- To impact and optimize the routing of signals between different components on the chip, preprocessor route guides are a set of predetermined guidelines or paths used throughout the routing process in IC (Integrated Circuit) design. By lowering congestion, guaranteeing effective use of routing resources, and following design guidelines, these instructions assist in guiding the router tool (such as TritonRoute) in a way that can enhance the routing process.
+
+Steering clear of congested locations is one approach to avoid congestion.
+Wire Length Optimization: Cutting signal path lengths to improve performance.
+
+Making Sure of the Design Rule Compliance: Adhering to the specifications for layer, width, and spacing.
+Simplifying Routing: Increasing the speed and ease of difficult routing processes.
+
+![Screenshot 2024-12-24 231900](https://github.com/user-attachments/assets/37ab6051-0b79-4acc-88b0-2c22d6945b23)
+
+- Interlayer sequential panel routing and intralayer parallel panel routing
+
+- Parallel Routing Within Layers
+
+enables the parallel routing of several signals inside a single metal layer.
+needs to be spaced carefully to prevent shorts or crosstalk.
+Sequential Routing in Interlayers
+
+uses vias to route signals across several metal layers.
+increases complexity yet offers greater flexibility.
+Both approaches maximize IC layout in terms of both performance and space.
+
+![Screenshot 2024-12-24 231938](https://github.com/user-attachments/assets/9af6318c-846f-4143-b497-2afc45596b0d) 
+
+- algorithm for routing topology
+
+![Screenshot 2024-12-24 232024](https://github.com/user-attachments/assets/d53740e4-7901-4c92-abc4-9fae69f71d9d) 
+
+
+
+
+

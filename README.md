@@ -107,4 +107,54 @@ magic -T sky130A.tech sky130_inv.mag &
 ```
 ![layout 1](https://github.com/user-attachments/assets/fc3ec11d-6c0f-4974-88be-75098efd50c3)
 
+![circuit naming](https://github.com/user-attachments/assets/606a5df6-f074-4a75-9080-8f4332c14087)
 
+#
+- Day - 4 (pre-layout timing analysis and importance of good clock tree)
+- The Impact of Glitches
+
+Errors in functionality:
+
+
+Errors in computation or operation may result from glitches that allow wrong values to flow across the circuit.
+Power Loss:
+
+Every glitch results in needless switching activity, raising the circuit's dynamic power consumption.
+Timing Infractions:
+
+Unpredictable behavior may arise from setup or hold violations caused by bugs that spread to timed parts.
+Skew in Cross-Talk Delta Delay
+
+
+
+- Clock tree synthesis:
+  In physical design, Clock Tree Synthesis (CTS) is a procedure that builds a clock tree network to uniformly distribute the clock signal across the system.
+Principal Goals:
+
+
+Reduce Skew: Make sure that the clock arrival times at various endpoints deviate as little as possible.
+Optimize Delay: For improved performance, cut down on clock path delays.
+Balanced Power: Maintain timing requirements while ensuring power efficiency.
+In CTS, the H-Tree Algorithm:
+
+One popular clock tree synthesis algorithm is H-tree.
+It establishes a network with symmetric clock distribution to reduce:
+Clock Skew: Consistent clock arrival times are guaranteed by equal path lengths.
+Delay Variations: Timing irregularities are lessened with a balanced framework.
+An "H" is formed at each level of the hierarchy by the H-tree structure, which hierarchically splits the clock network into smaller parts. 
+
+![Screenshot 2024-12-24 223317](https://github.com/user-attachments/assets/89d1a31f-87dd-4874-9e27-5522723f790a)
+
+![Screenshot 2024-12-24 223352](https://github.com/user-attachments/assets/ffb8ad9d-c86e-4bd4-b967-86f2807b2bf7)
+
+![Screenshot 2024-12-24 222948](https://github.com/user-attachments/assets/d8c2dfea-da35-41d0-ad1e-84aeecd7f5ee) 
+
+![Screenshot 2024-12-24 223102](https://github.com/user-attachments/assets/7256ba1e-c625-44a3-8e4b-71e14510ff92) 
+
+![Screenshot 2024-12-24 222747](https://github.com/user-attachments/assets/35756fa0-884d-4e49-8224-58f462abfef3) 
+
+![Screenshot 2024-12-24 222859](https://github.com/user-attachments/assets/9374448f-9e66-40b3-96c7-5cf91df5fcfc) 
+
+#
+- Day - 5 (final steps for RTL2GDS using tritonRoute and openSTA)
+- 

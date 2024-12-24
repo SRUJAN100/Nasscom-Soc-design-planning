@@ -54,4 +54,57 @@ To find the percentage
 #
 - Day - 2 (Good floorplan Vs Bad floorplan and introduction to library cells)
 
+- Utilization Factor 
+The effectiveness of space utilization within the chip's core is gauged by the Utilization Factor (U.F.). It is the proportion between the area of the core (the designated functional area on the chip) and the area occupied by the netlist (logical design components like gates, flip-flops, etc.). More efficient use of the given core space is indicated by a greater utilization factor. 
+- formula 
+```math
+utilization\ factor = \frac{area\ occupied\ by\ netlist}{total\ area\ of\ the\ core}
+```
+- Apect Ratio The die's height (length) divided by its breadth is known as the aspect ratio. It can influence component placement and routing and offers information about the chip die's shape.
+- formula
+```math
+Aspect\ Ratio = \frac{height\ the\ core}{width\ of\ the\ core}
+``` 
+```
+run_floorplan
+```
+![run floor plan](https://github.com/user-attachments/assets/6a42050b-8beb-4d54-ad8a-58752011b312)
+
+```
+ls -ltr
+cd design
+cd picorv32a
+ls -ltr
+cd runs
+ls -ltr
+```
+![floor plan](https://github.com/user-attachments/assets/93f50d73-de7b-4e67-b16d-eda4eb528d2f)
+
+Layout view 
+![cell view](https://github.com/user-attachments/assets/eb5e1b60-6a65-496e-9fee-142014cfb404)
+
+#
+- Day - 3 (Design library cell using magic layout and ngspice characterization)
+
+- cloning git repo to openlane
+```
+git clone https://github.com/nickson-jose/vsdstdcelldesign.git
+```
+
+- Extracting sky130A.tech and include it in the vsdstdcelldesign
+```
+cp sky130A.tech /home/vsduser/Desktop/work/tools/openloane_working_dir/openlane/vsdstdcelldesign/
+```
+![to copy files to git hub](https://github.com/user-attachments/assets/ebc96255-4038-4cd1-8b25-b23bb450cb82) 
+
+- copied file in vsdstdcelldesign
+
+![copied file to git hub](https://github.com/user-attachments/assets/48ca472e-3da3-485e-975b-c329dd5ea22f) 
+
+- To see the layout design
+```
+magic -T sky130A.tech sky130_inv.mag &
+```
+![layout 1](https://github.com/user-attachments/assets/fc3ec11d-6c0f-4974-88be-75098efd50c3)
+
 
